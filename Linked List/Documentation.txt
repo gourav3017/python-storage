@@ -1,0 +1,31 @@
+Documentation
+I. class Node
+1. function __init__ by default
+  contain value data of any object
+  contain value next of next Node object
+2. function __str__ by default
+II. class LinkedList
+1. function __init__ by default
+  contain value head of the first Node in the list
+  value head is by default None if the list is empty
+2. function __str__ by default
+3. function attach(data)
+  add new Node object at the end of the linked list
+  with data value data and pointer properly adjusted
+4. function delete(data)
+  find the first occurence of data value data in the list
+  delete the first occurence and jump out
+  raise ValueError if value data is not found in the list
+5. function deleteAll(data)
+  delete all occurences of value data in the list
+6. function itemAt(index)
+  return data value of the Node at position index
+7. function push(data)
+  add new Node object at the beginning of the list
+  with data value data and pointer properly adjusted
+8. function search(data)
+  return the Node of the first occurence of data value data
+  will return None if value data is not found in the list
+9. function size()
+  return the length of the list
+10. function reverse() under construction
