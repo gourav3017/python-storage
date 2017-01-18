@@ -73,3 +73,13 @@ class LinkedList(object):
             current = current.next
             current_index += 1
         return current.data
+    def reverse(self):
+        current = self.head
+        previous = None
+        while current:
+            # Store the next item for successful looping
+            temp = current.next
+            current.next = previous
+            previous = current
+            current = temp
+        self.head = previous
