@@ -28,4 +28,5 @@ II. class LinkedList
   will return None if value data is not found in the list
 9. function size()
   return the length of the list
-10. function reverse() under construction
+10. function reverse()
+  reverse the list by adjusting the links
