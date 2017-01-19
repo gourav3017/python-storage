@@ -50,3 +50,29 @@ class BinarySearchTree(object):
         self.string += '('+BinarySearchTree(self.root.left).preorder__str__()+')'
         self.string += '['+BinarySearchTree(self.root.right).preorder__str__()+']'
         return self.string
+    def inorderPrint(self):
+        if self.root is None:
+            return
+        BinarySearchTree(self.root.left).inorderPrint()
+        print(self.root)
+        BinarySearchTree(self.root.right).inorderPrint()
+    def inorder__str__(self):
+        self.string = str(self.root)
+        if self.root is None:
+            return ''
+        self.string = '('+BinarySearchTree(self.root.left).inorder__str__()+')'+self.string
+        self.string += '['+BinarySearchTree(self.root.right).inorder__str__()+']'
+        return self.string
+    def postorderPrint(self):
+        if self.root is None:
+            return
+        BinarySearchTree(self.root.left).postorderPrint()
+        BinarySearchTree(self.root.right).postorderPrint()
+        print(self.root)
+    def postorder__str__(self):
+        self.string = str(self.root)
+        if self.root is None:
+            return ''
+        self.string = '['+BinarySearchTree(self.root.right).postorder__str__()+']'+self.string
+        self.string = '('+BinarySearchTree(self.root.left).postorder__str__()+')'+self.string
+        return self.string
