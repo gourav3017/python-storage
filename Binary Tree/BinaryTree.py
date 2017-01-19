@@ -107,3 +107,12 @@ class BinarySearchTree(object):
                 return y
         return max(BinarySearchTree(self.root.left).height(),
                    BinarySearchTree(self.root.right).height()) + 1
+    def levelorderPrint(self):
+        nodes = [self.root]
+        while len(nodes) != 0:
+            print(nodes[0])
+            if nodes[0].left:
+                nodes.append(nodes[0].left)
+            if nodes[0].right:
+                nodes.append(nodes[0].right)
+            del nodes[0]
