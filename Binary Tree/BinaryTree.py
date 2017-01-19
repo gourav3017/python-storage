@@ -76,3 +76,12 @@ class BinarySearchTree(object):
         self.string = '['+BinarySearchTree(self.root.right).postorder__str__()+']'+self.string
         self.string = '('+BinarySearchTree(self.root.left).postorder__str__()+')'+self.string
         return self.string
+    def search(self, data):
+        if self.root is None:
+            return False
+        if data < self.root.data:
+            return BinarySearchTree(self.root.left).search(data)
+        elif data > self.root.data:
+            return BinarySearchTree(self.root.right).search(data)
+        else:
+            return True
