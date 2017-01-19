@@ -97,3 +97,13 @@ class BinarySearchTree(object):
         if self.root.right is None:
             return self.root.data
         return BinarySearchTree(self.root.right).max()
+    def height(self):
+        if self.root is None:
+            return -1
+        def max(x, y):
+            if x >= y:
+                return x
+            else:
+                return y
+        return max(BinarySearchTree(self.root.left).height(),
+                   BinarySearchTree(self.root.right).height()) + 1
