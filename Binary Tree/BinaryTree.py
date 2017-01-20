@@ -116,3 +116,68 @@ class BinarySearchTree(object):
             if nodes[0].right:
                 nodes.append(nodes[0].right)
             del nodes[0]
+    def delete(self, data):
+        def deleteUtil(tree, data, parent, switch):
+            # parameter parent records reference to parent node
+            # parameter switch = 0 if current node is left of parent node
+            if tree.root is None:
+                return
+            if tree.root.data != data:
+                if data <= tree.root.data:
+                    # go to search left subtree
+                    deleteUtil(BinarySearchTree(tree.root.left), data, tree.root, 0)
+                else:
+                    # go to search right subtree
+                    deleteUtil(BinarySearchTree(tree.root.right), data, tree.root, 1)
+            else:
+                if tree.root.isLeaf():
+                    # target node is a leaf, directly delete it
+                    if switch == 0:
+                        parent.left = None
+                        return
+                    else:
+                        parent.right = None
+                        return
+                elif tree.root.left is None:
+                    # target node only has right subtree
+                    # replace target node with root of right subtree
+                    ref = tree.root.right
+                    if switch == 0:
+                        parent.left = ref
+                        return
+                    else:
+                        parent.right = ref
+                        return
+                elif tree.root.right is None:
+                    # target node only has left subtree
+                    # replace target node with root of left subtree
+                    ref = tree.root.left
+                    if switch == 0:
+                        parent.left = ref
+                        return
+                    else:
+                        parent.right = ref
+                        return
+                else:
+                    # target node has both left and right subtrees
+                    # Find min value node of right subtree
+                    def getMin(tree, parent):
+                        if tree.root.left is None:
+                            return [tree.root, parent]
+                        else:
+                            return getMin(BinarySearchTree(tree.root.left), tree.root)
+                    temp = getMin(BinarySearchTree(tree.root.right), tree.root)
+                    minNode = temp[0]
+                    minParent = temp[1]
+                    # Remove minNode from the tree and adjust links
+                    minParent.left = minNode.right
+                    # Replace target node with minNode and adjust links
+                    minNode.left = tree.root.left
+                    minNode.right = tree.root.right
+                    if switch == 0:
+                        parent.left = minNode
+                        return
+                    else:
+                        parent.right = minNode
+                        return
+        deleteUtil(self, data, None, None)
