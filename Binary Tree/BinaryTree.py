@@ -85,12 +85,28 @@ class BinarySearchTree(object):
             return BinarySearchTree(self.root.right).search(data)
         else:
             return True
+    def addressOf(self, data):
+        if self.root is None:
+            return None
+        if data < self.root.data:
+            return BinarySearchTree(self.root.left).addressOf(data)
+        elif data > self.root.data:
+            return BinarySearchTree(self.root.right).addressOf(data)
+        else:
+            # Return pointer to the current/target node
+            return self.root
     def min(self):
         if self.root is None:
             raise ValueError('Error: Tree is empty')
         if self.root.left is None:
             return self.root.data
         return BinarySearchTree(self.root.left).min()
+    def minAddress(self):
+        if self.root is None:
+            return None
+        if self.root.left is None:
+            return self.root
+        return BinarySearchTree(self.root.left).minAddress()
     def max(self):
         if self.root is None:
             raise ValueError('Error: Tree is empty')
@@ -181,3 +197,23 @@ class BinarySearchTree(object):
                         parent.right = minNode
                         return
         deleteUtil(self, data, None, None)
+    def successor(self, data):
+        ref = self.addressOf(data)
+        if ref is None:
+            return None
+        if ref.right:
+            # Target node has right subtree
+            current = ref.right
+            while current.left:
+                current = current.left
+            return current
+        else:
+            target = None
+            ancestor = self.root
+            while ancestor != ref:
+                if ref.data < ancestor.data:
+                    target = ancestor
+                    ancestor = ancestor.left
+                else:
+                    ancestor = ancestor.right
+            return target
