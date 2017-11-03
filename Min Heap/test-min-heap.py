@@ -35,6 +35,16 @@ RM(); assert AST(6, [10, 11, 11, 11, 20, 12])
 RM(); assert AST(5, [11, 11, 11, 12, 20])
 RM(); assert AST(4, [11, 12, 11, 20])
 RM(); assert AST(3, [11, 12, 20])
+[RM() for _ in range(3)]
+CAT = False
+try:
+    RM()
+except ValueError:
+    CAT = True
+finally:
+    pass
+if not CAT:
+    raise ValueError("expect an exception - heap.delete should fail when heap is empty")
 
 # All Test Cases Passed
 print("All tests passed!")
