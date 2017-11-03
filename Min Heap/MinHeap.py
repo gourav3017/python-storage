@@ -1,5 +1,5 @@
 class MinHeap:
-    def __init__(self, size = 0):
+    def __init__(self):
         self.data = ['']
         self.size = 0
     def __str__(self):
@@ -23,7 +23,7 @@ class MinHeap:
         bubble_up(self.size)
     def delete(self):
         if self.size == 0:
-            return
+            raise ValueError("heap is empty")
         def bubble_down(index):
             left = index * 2
             right = left + 1
