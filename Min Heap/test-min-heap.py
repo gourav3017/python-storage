@@ -2,11 +2,10 @@ from MinHeap import *
 
 # Test Case 1
 heap1 = MinHeap()
-assert heap1.size == 0
-assert len(heap1.data) == 1
+assert len(heap1) == 0
 IN = lambda x : heap1.insert(x)
 RM = lambda: heap1.delete()
-AST = lambda x, l : heap1.size == x and heap1.data[1 : x + 1] == l
+AST = lambda x, l : len(heap1) == x and str(heap1) == str(l)
 IN(4); assert AST(1, [4])
 IN(7); assert AST(2, [4, 7])
 IN(3); assert AST(3, [3, 7, 4])

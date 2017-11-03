@@ -4,6 +4,8 @@ class MinHeap:
         self.size = 0
     def __str__(self):
         return str(self.data[1 : self.size + 1])
+    def __len__(self):
+        return self.size
     def clear(self):
         self.data = ['']
         self.size = 0
