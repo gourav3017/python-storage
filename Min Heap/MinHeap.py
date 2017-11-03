@@ -38,5 +38,7 @@ class MinHeap:
                     self.data[index], self.data[right]
                     bubble_down(right)
         self.data[1] = self.data[self.size]
+        del self.data[self.size]
         self.size -= 1
         bubble_down(1)
+
