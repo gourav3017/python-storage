@@ -42,6 +42,7 @@ see documentation
 ### MinHeap
 - init
 - str
+- len
 - void clear(self)
 - void insert(self, value)
 - void delete(self)
