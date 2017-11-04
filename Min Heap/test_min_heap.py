@@ -3,10 +3,12 @@ from MinHeap import *
 # Test Case 1
 heap1 = MinHeap()
 assert len(heap1) == 0
+assert heap1.is_empty() == True
 IN = lambda x : heap1.insert(x)
 RM = lambda: heap1.delete()
 AST = lambda x, l : len(heap1) == x and str(heap1) == str(l)
 IN(4); assert AST(1, [4])
+assert heap1.is_empty() == False
 IN(7); assert AST(2, [4, 7])
 IN(3); assert AST(3, [3, 7, 4])
 IN(8); assert AST(4, [3, 7, 4, 8])
@@ -35,7 +37,9 @@ RM(); assert AST(6, [10, 11, 11, 11, 20, 12])
 RM(); assert AST(5, [11, 11, 11, 12, 20])
 RM(); assert AST(4, [11, 12, 11, 20])
 RM(); assert AST(3, [11, 12, 20])
+assert heap1.is_empty() == False
 [RM() for _ in range(3)]
+assert heap1.is_empty() == True
 CAT = False
 try:
     RM()

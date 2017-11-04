@@ -9,6 +9,8 @@ class MinHeap:
     def clear(self):
         self.data = ['']
         self.size = 0
+    def is_empty(self):
+        return self.size == 0
     def insert(self, value):
         def bubble_up(index):
             if index == 1:
