@@ -44,6 +44,8 @@ see documentation
 - str
 - len
 - void clear(self)
+- bool is_empty(self)
+- data peek(self)
 - void insert(self, value)
 - void delete(self)
 
