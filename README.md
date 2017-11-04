@@ -48,6 +48,8 @@ see documentation
 - data peek(self)
 - void insert(self, value)
 - void delete(self)
+### HeapSort
+- list heap_sort(list)
 
 ## Trie
 ### Node
