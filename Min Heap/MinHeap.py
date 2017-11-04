@@ -11,6 +11,8 @@ class MinHeap:
         self.size = 0
     def is_empty(self):
         return self.size == 0
+    def peek(self):
+        return self.data[1]
     def insert(self, value):
         def bubble_up(index):
             if index == 1:
