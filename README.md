@@ -55,6 +55,10 @@ see documentation
 ### HeapSort
 - list heap_sort(list)
 
+## Radix Sort
+### RadixLSD
+- list radix_sort_LSD(list)
+
 ## Trie
 ### Node
 - init
