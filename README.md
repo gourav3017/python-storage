@@ -29,6 +29,10 @@
 ### BubbleSort
 - list bubble_sort(list)
 
+## Counting Sort
+### CountingSort
+- list counting_sort(list)
+
 ## Graph (use BinTree)
 ### Graph
 - init
