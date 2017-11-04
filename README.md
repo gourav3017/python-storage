@@ -25,6 +25,10 @@
 - void delete(self, data)
 - BinNode successor(self, data)
 
+## Bubble Sort
+### BubbleSort
+- list bubble_sort(list)
+
 ## Graph (use BinTree)
 ### Graph
 - init
