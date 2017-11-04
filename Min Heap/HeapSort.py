@@ -5,7 +5,8 @@ def heap_sort(arr):
     for elem in arr:
         heap.insert(elem)
     arr = []
-    while not heap.empty():
-        arr.append(heap.pop)
+    while not heap.is_empty():
+        arr.append(heap.peek())
+        heap.delete()
     return arr
 
