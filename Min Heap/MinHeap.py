@@ -1,3 +1,23 @@
+# This algorithm heapifies the entire binary tree
+# This function is NOT pure
+def min_heapify(data):
+    def heapify_util(data, index):
+        left = index * 2
+        right = left + 1
+        min_index = index
+        if left <= len(data) - 1:
+            if data[left] < data[min_index]:
+                min_index = left
+        if right <= len(data) - 1:
+            if data[right] < data[min_index]:
+                min_index = right
+        if min_index != index:
+            data[index], data[min_index] = \
+            data[min_index], data[index]
+            heapify_util(data, min_index)
+    for index in range(len(data) - 1):
+        heapify_util(data, len(data) - 1 - index)
+
 class MinHeap:
     def __init__(self):
         self.data = ['']
