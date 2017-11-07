@@ -56,8 +56,9 @@ see documentation
 - data peek(self)
 - void insert(self, value)
 - void delete(self)
+- void min_heapify(list)
 ### HeapSort
-- list heap_sort(list)
+- list fake_heap_sort(list)
 
 ## Radix Sort
 ### RadixLSD
