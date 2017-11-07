@@ -1,6 +1,6 @@
 from MinHeap import *
 
-def heap_sort(arr):
+def fake_heap_sort(arr):
     heap = MinHeap()
     for elem in arr:
         heap.insert(elem)
