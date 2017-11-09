@@ -1,6 +1,28 @@
 # Python Storage
 *data structures, algorithms*
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Binary Tree (BST)](#binary-tree-bst)
+  - [BinNode](#binnode)
+- [Bubble Sort](#bubble-sort)
+  - [BubbleSort](#bubblesort)
+- [Counting Sort](#counting-sort)
+  - [CountingSort](#countingsort)
+- [Graph (use BinTree)](#graph-use-bintree)
+  - [Graph](#graph)
+- [Linked List](#linked-list)
+- [Min Heap](#min-heap)
+  - [MinHeap](#minheap)
+- [Radix Sort](#radix-sort)
+  - [RadixLSD](#radixlsd)
+- [Trie](#trie)
+  - [Node](#node)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Binary Tree (BST)
 ### BinNode
 - init
